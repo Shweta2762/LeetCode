@@ -40,7 +40,7 @@ public:
         temp->val=rev->val;
         rev->val=temp->val;
         return temp;*/
-        ListNode* ptr=head;
+        /*ListNode* ptr=head;
         int n=k-1;
         while(n>0)
         {
@@ -55,8 +55,24 @@ public:
           }
         
         swap(frnt->val,back->val);
+        return head;*/
+        int n=k-1;
+        ListNode* front=head;
+        int i=0;
+        while(i!=n)
+        {
+            front=front->next;
+            i=i+1;
+        }
+        ListNode* orifro=front;
+        ListNode* back=head;
+        while(front->next!=NULL)
+        {
+            back=back->next;
+            front=front->next;
+        }
+        swap(orifro->val,back->val);
         return head;
-
         
     }
 };
