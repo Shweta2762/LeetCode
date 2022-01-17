@@ -49,7 +49,7 @@ public:
         }
           ListNode* frnt=ptr;
           ListNode* back=head;        
-          while(ptr!=NULL && ptr->next!=NULL){
+          while(ptr->next!=NULL){
               back=back->next;
               ptr=ptr->next;
           }
