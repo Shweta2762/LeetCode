@@ -12,21 +12,17 @@
 class Solution {
 public:
     int minDepth(TreeNode* root) {
-        int l,r;
+        int left_l,right_r;
         if(root==NULL)
             return 0;
-        if(root->left==NULL && root->right==NULL)
+        if(root->left==0 && root->right==NULL)
             return 1;
-        //if(root->left)
-            l=minDepth(root->left);
-        //if(root->right)
-            r=minDepth(root->right);
-        if(l==0)
-            return r+1;
-        if(r==0)
-            return l+1;
-        return min(l,r)+1;
-        
-        
+        left_l=minDepth(root->left);
+        right_r=minDepth(root->right);
+        if(left_l==0)
+            return right_r+1;
+        if(right_r==0)
+            return left_l+1;
+        return min(left_l,right_r)+1;
     }
 };
