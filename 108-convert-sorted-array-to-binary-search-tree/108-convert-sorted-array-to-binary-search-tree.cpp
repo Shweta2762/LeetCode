@@ -18,9 +18,9 @@ public:
             return NULL;
         int mid=(start+end)/2;
         //TreeNode *root = newNode(nums[mid]);
-        //TreeNode *root=new TreeNode();
-        TreeNode* root = new TreeNode(nums[mid]);
-        //root->val=nums[mid];
+        TreeNode *root=new TreeNode();
+        //TreeNode* root = new TreeNode(nums[mid]);
+        root->val=nums[mid];
         //TreeNode *root=new newNode(nums[mid]);
         root->left=sortedArrayhelp(nums,start,mid-1);
         root->right=sortedArrayhelp(nums,mid+1,end);
