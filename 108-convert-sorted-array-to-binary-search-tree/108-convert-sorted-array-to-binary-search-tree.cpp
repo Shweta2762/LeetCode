@@ -14,7 +14,7 @@ public:
     //TreeNode* newNode(int val);
     TreeNode *sortedArrayhelp(vector<int>&nums,int start,int end)
     {
-        if(end-start+1<1)
+        if(start>end)
             return NULL;
         int mid=(start+end)/2;
         //TreeNode *root = newNode(nums[mid]);
