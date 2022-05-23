@@ -55,16 +55,12 @@ public:
                 if(curr_size > longest)
                 {
                     longest = curr_size;
-                    
                     res = str.substr(left, curr_size);
                 }
-                
                 left--;
-                
                 right++;
             }
         }
-        
         return res;
     }
 };
