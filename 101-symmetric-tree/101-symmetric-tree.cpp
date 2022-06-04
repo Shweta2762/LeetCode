@@ -11,39 +11,15 @@
  */
 class Solution {
 public:
-//     TreeNode *mirrorTree(TreeNode *root)
-//     {
-//         TreeNode *ree=root;
-//         if(root==NULL)
-//             return 0;
-//         mirrorTree(root->left);
-//         mirrorTree(root->right);
-//         swap(root->left,root->right);
-//         return ree;
-//     }
-    
-//     bool isMirrorHelp(TreeNode *root1, TreeNode *root2)
-//     {
-//         if(root1==NULL && root2==NULL)
-//             return true;
-//         if(root1&&root2&&root1->val==root2->val)
-//             return isMirrorHelp(root1->left,root2->left)&&isMirrorHelp(root1->right,root2->right);
-        
-//         return false;
-//     }
-//     bool isSymmetric(TreeNode* root) {
-//         TreeNode* mirror=mirrorTree(root);
-//         return isMirrorHelp(root,mirror);
-//     }
-     bool check(TreeNode* root1,TreeNode* root2){
-        if(root1==nullptr && root2==nullptr){
+    bool symmetricHelper(TreeNode* root, TreeNode*root2)
+    {
+        if(root==NULL && root2==NULL)
             return true;
-        }
-        else if(root1==nullptr || root2==nullptr)
+        else if(root==NULL || root2==NULL)
             return false;
-        return root1->val==root2->val and check(root1->left,root2->right) and check(root1->right,root2->left);
+        return (root->val==root2->val && symmetricHelper(root->left,root2->right)&&symmetricHelper(root->right,root2->left));
     }
     bool isSymmetric(TreeNode* root) {
-        return check(root,root);
+        return symmetricHelper(root,root);
     }
 };
