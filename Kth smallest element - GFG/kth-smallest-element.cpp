@@ -14,23 +14,14 @@ class Solution{
     // r : ending index of the array i.e size-1
     // k : find kth smallest element and return using this function
     int kthSmallest(int arr[], int l, int r, int k) {
-        // int n=sizeof(arr);
-        vector<int> ree;
-        for(int i=l;i<=r;i++)
-        ree.push_back(arr[i]);
-        sort(ree.begin(),ree.end());
-        return ree[k-1];
-        // cout<<n;
-        // for(int i=0;i<r;i++)
-        // sort(arr,arr+r);
-        // cout<<k;
-        // int n=sizeof(arr,arr[0]);
-        // return arr[k];
-        // int ree=0;
-        // for(int i=0;i<=k;i++)
-        // {
-        //     ree=arr[k];
-        // }
+        // int n=sizeof(arr)/sizeof(arr[0]);
+        vector<int>v;
+        for(int i=0;i<r+1;i++)
+        v.push_back(arr[i]);
+        sort(v.begin(),v.end());
+        return v[k-1];
+        // sort(arr,arr+n);
+        return arr[k-1];
         //code here
     }
 };
