@@ -18,6 +18,10 @@ class Solution{
             maximu=max(sum,maximu);
             if(sum<0)
             sum=0;
+            // sum=sum+arr[i];
+            // maximu=max(sum,maximu);
+            // if(sum<0)
+            // sum=0;
         }
         return maximu;
         
