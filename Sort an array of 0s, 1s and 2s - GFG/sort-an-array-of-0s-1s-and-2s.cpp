@@ -10,8 +10,17 @@ class Solution
     public:
     void sort012(int a[], int n)
     {
+        vector<int>v;
+        
+        // for(int i=0;i<n;i++)
+        // v.push_back(a[i]);
+        // sort(v.begin(),v.end());
+        // for(int i=0;i<n;i++)
+        // a[i]=v[i];
         sort(a,a+n);
-        // coode here 
+        // for(int i=0;i)
+        
+        // code here ,
     }
     
 };
