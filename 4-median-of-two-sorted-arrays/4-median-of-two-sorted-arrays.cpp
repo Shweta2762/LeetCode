@@ -1,14 +1,13 @@
 class Solution {
 public:
     double findMedianSortedArrays(vector<int>& nums1, vector<int>& nums2) {
-        vector<int>nums3;
-        for(int i=0;i<nums1.size();i++)
-            nums3.push_back(nums1[i]);
         for(int i=0;i<nums2.size();i++)
-            nums3.push_back(nums2[i]);
-        sort(nums3.begin(),nums3.end());
-        if(nums3.size()%2!=0)
-            return (double)nums3[nums3.size()/2];
-        return (double)(nums3[(nums3.size()-1)/2]+nums3[nums3.size()/2])/2;   
+            nums1.push_back(nums2[i]);
+        int n=nums1.size();
+        sort(nums1.begin(),nums1.end());
+        if(n%2!=0)
+            return nums1[n/2];
+        else
+            return double(nums1[n/2]+nums1[n/2-0.5])/2;
     }
 };
